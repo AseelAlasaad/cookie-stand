@@ -1,0 +1,15 @@
+
+  table,td,tfoot {
+    border-collapse: collapse;
+}
+th,tfoot {
+    background-color:rgb(173, 169, 169);
+    Color:white;
+}
+th, td ,tfoot{
+    width:150px;
+    text-align:center;
+    border:1px solid black;
+    padding:5px
+  
+}
