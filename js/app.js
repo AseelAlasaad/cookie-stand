@@ -3,6 +3,8 @@ let hoursArray = ["6 AM", "7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 
 let locationArray=[];
 let parent=document.getElementById('one');
 console.log(parent);
+let Table=document.createElement('table');
+parent.appendChild(Table);
 //random function
 function Getrandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -39,23 +41,11 @@ Shop.prototype.avgchookiesperhour=function()
     {
      var numofcookies = Math.floor(this.randomCustomer[j] * this.avg);
      this.avgChookies.push(numofcookies);
-    
+     this.total +=this.avgChookies[j];
     }
    ///console.log(this.avgChookies);
 }
-Shop.prototype.Totalchookies=function()
-{
-  
-    
-    for(let i=0;i<hoursArray.length;i++)
-    {
-       this.total +=this.avgChookies[i];   
-    }
-    console.log(this.total);
 
-   
-
-}
 
 
 // 5 objects
@@ -78,7 +68,7 @@ function header()
 { 
     
     var trElement=document.createElement('tr')
-    parent.appendChild(trElement);
+    Table.appendChild(trElement);
     var thElement=document.createElement('th');
     trElement.appendChild(thElement);
     thElement.textContent='Location\ /time';
@@ -99,14 +89,12 @@ function header()
 }
 header();
 
-let Table=document.createElement('table');
-parent.appendChild(Table);
+
 
 Shop.prototype.render=function()
-{  
-    this.randomCustomershour();
-    this.avgchookiesperhour();
-    this.Totalchookies();
+{
+  
+
     var trElement=document.createElement('tr');
     Table.appendChild(trElement);
     
@@ -137,34 +125,58 @@ Shop.prototype.render=function()
 }
 function Footer()
 {
-//     <tfoot>
-//     <tr>
-//       <td>Sum</td>
-//       <td>$180</td>
-//     </tr>
-//   </tfoot>
-
+   
  let tfootElement=document.createElement('tfoot');
  Table.appendChild(tfootElement);
  var trElement=document.createElement('tr');
  tfootElement.appendChild(trElement);
  trElement.textContent="Total";
- for(let i=0 ;i< hoursArray.length+1 ;i++)
+ 
+ for(let i=0 ;i< hoursArray.length;i++)
  {
-   
+    let total2=0;
+    
     var tdElement=document.createElement('td');
     trElement.appendChild(tdElement);
-    tdElement.textContent='';
+    for(let j=0;j<locationArray.length;j++)
+    { 
+      total2+=locationArray[j].avgChookies[i]; 
+     
+       tdElement.textContent=total2;       
+    
+    }
+
    
+    
 
-
- }
+    
 }
+
+let totalOftotal=0;
+for(let j=0;j<locationArray.length;j++)
+{ 
+  totalOftotal+=locationArray[j].total;
+   
+}
+console.log("total:",totalOftotal);
+var tdElement=document.createElement('td');
+trElement.appendChild(tdElement);
+tdElement.textContent=totalOftotal;  
+
+
+
+    
+} 
+  
+ 
+
 
 
 
 for(let i=0;i<locationArray.length;i++)
 {
+   locationArray[i].randomCustomershour();
+   locationArray[i].avgchookiesperhour();
    locationArray[i].render();
 
 }
