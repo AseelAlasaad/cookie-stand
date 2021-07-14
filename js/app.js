@@ -64,6 +64,7 @@ let Lima=new Shop("Lima",2,16,4.6);
 
 
 
+
 Table.textContent='';
 //header row
 function header()
@@ -152,6 +153,7 @@ for(let j=0;j<locationArray.length;j++)
   totalOftotal+=locationArray[j].total;
  // console.log(locationArray[j]); 
 }
+
 var tdElement=document.createElement('td');
 trElement.appendChild(tdElement);
 tdElement.textContent=totalOftotal;  
@@ -177,6 +179,7 @@ for(let i=0;i<locationArray.length;i++)
 
 Footer();
 console.log("befor",locationArray.length);
+
 
 //add tag form for html 
 let form=document.getElementById('form');
@@ -205,6 +208,4 @@ function Addform(event)
    addnewshop.avgchookiesperhour();
    addnewshop.render();
    Footer();
-}
-
 
