@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 
   table,td,tfoot {
     border-collapse: collapse;
@@ -13,65 +16,92 @@ th, td ,tfoot{
     padding:5px
   
 }
- *{
-     box-sizing: border-box;
- }
- 
- body{
-    
-        background-color:rgb(248, 232, 235);
-        font-family: Arial, Helvetica, sans-serif;
-        padding:10px;
-
-  
- }
+body{
+    background-color:rgb(241, 221, 200);
+}
 
  header{
-     background-color: rgb(229, 190, 196);
-     padding: 10px;
-     text-align: center;
-     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     background-color:rgb(116, 58, 32);
+     border: 2px solid rgb(206, 204, 204);
  }
- 
-nav{
-    margin-bottom: 5px;
-    
-}
- nav ul  li{
-     display: inline;
-     padding: 10px;
+ h1{
+     color:rgb(219, 169, 146);
+     padding-left: 10px;
  }
-
- nav ul  li  a{
-
-    float: left;
-    text-decoration: none;
-   
+ h2{
+   text-align: center;
+   font-family: 'Dancing Script', cursive;
  }
- 
-.One img{
-    padding: 10px;
-    text-align: center;
-    display: inline;
-    width: 90%;
-    margin: 10px;
-    border: 4px solid rgb(119, 119, 119);
- }
-
- #images{
-    
+ nav ul li{
      display: inline;
      padding: 20px;
-     margin: 20px;
-    
- }
- .Tow p{
+     
    
-    width: 250px;
-    border: 15px solid green;
-    padding: 50px;
-    
-
  }
+ nav ul li a{
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+    font: bold;
+    color:rgb(219, 169, 146);
+   
+ }
+
+ nav ul li:hover{
+   background-color: gray;
+
+  }
+div{
+    text-align: center;
+  
+  
+}
+ #pic1{
+    display: block;
+     margin-left: auto;
+     margin-right: auto;     
+    
+ }
+ #p1{
+     font-size: 18px;
+     padding-top: 50px;
+     padding: 3%;
+     padding-left: 20px;
+     padding-right: 20px;
+     width: 75%;
+     color: black;
+     margin: auto;
+     display: block;
+ }
+
+p{
+    padding: 20px;
+    width: 90%;
+    border: 2px solid rgb(196, 189, 189);
+    
+}
+
+#location{
+
+font-family: 'Triocchi', sans-serif;
+ padding-top: 50px;
+    font-size: 18px;
+   color: #0e0d0d;
+    text-align: center;
+    width: 75%;
+    padding: 3%;
+    margin: auto;
+    display:block;
+    
+}
+
+.one{
+
+   padding: 30px;
+   display: block;
+   margin: i0px;
+}
+
+
+    
 
  
