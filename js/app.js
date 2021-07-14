@@ -60,7 +60,7 @@ let Paris=new Shop("Paris",20,38,2.3);
 let Lima=new Shop("Lima",2,16,4.6);
 
 
-//render function
+Table.textContent='';
 
 
 //header row
@@ -158,11 +158,11 @@ for(let j=0;j<locationArray.length;j++)
   totalOftotal+=locationArray[j].total;
    
 }
-console.log("total:",totalOftotal);
+
 var tdElement=document.createElement('td');
 trElement.appendChild(tdElement);
 tdElement.textContent=totalOftotal;  
-
+console.log("Total of Total",totalOftotal);
 
 
     
@@ -182,4 +182,34 @@ for(let i=0;i<locationArray.length;i++)
 }
 
 Footer();
-console.log(locationArray);
+console.log("befor",locationArray.length);
+
+
+//add tag form for html 
+let form=document.getElementById('form');
+
+//you need to add listener
+form.addEventListener('submit',Addform);
+function Addform(event)
+{
+   event.preventDefault();
+   
+   //console.log(event);
+    let name=event.target.nameshop.value;
+    //console.log(name);
+    let minCustomer=parseInt(event.target.min.value);
+   // console.log(minCustomer);
+   let maxCustomer=parseInt(event.target.max.value);
+
+   let Avgforchookies=parseFloat(event.target.avg.value);
+
+   
+   let addnewshop=new Shop(name,minCustomer,maxCustomer,Avgforchookies);
+   //delete the last element
+   Table.deleteRow(-1);
+   console.log("After",locationArray.length);
+   addnewshop.randomCustomershour();
+   addnewshop.avgchookiesperhour();
+   addnewshop.render();
+   Footer();
+}

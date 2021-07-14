@@ -9,18 +9,49 @@
 
 <body>
   <header>
-    <a href="index.html">Home page</a>
-  </header>  
+    <nav> <ul><li> <a href="index.html">Home page</a></li></ul></nav>
+  
+  </header>
   <main>
-<div id="one">
+
+    <form id="form">
+      <fieldset>
+        <label for="nameshop">location name </label>
+        <input type="text" name="nameshop" id="nameshop">
+        <br>
+        <br>
+        <label for="min">Min Customers </label>
+        <input type="number" name="min" id="min">
+        <br>
+        <br>
+        <label for="max">Max Customers </label>
+        <input type="number" name="max" id="max">
+
+        <br>
+        <br>
+        <label for="avg">Average Chookies </label>
+        <input type="number" name="avg" id="avg" step="0.01">
+        <br>
+        <br>
+
+        <input type="submit" value="Save">
+
+      </fieldset>
+
+    </form>
+    <br>
+    <div id="one">
+    </div>
 
 
-</div>
-</main>
-<footer>
-    
+
+
+
+  </main>
+  <footer>
+
     <script src="js/app.js"> </script>
-</footer>
+  </footer>
 </body>
 
 
