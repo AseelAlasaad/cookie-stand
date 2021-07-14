@@ -5,6 +5,7 @@ let parent=document.getElementById('one');
 console.log(parent);
 let Table=document.createElement('table');
 parent.appendChild(Table);
+
 //random function
 function Getrandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -43,9 +44,8 @@ Shop.prototype.avgchookiesperhour=function()
      this.avgChookies.push(numofcookies);
      this.total +=this.avgChookies[j];
     }
-   ///console.log(this.avgChookies);
+   console.log(this.avgChookies);
 }
-
 
 
 // 5 objects
@@ -60,9 +60,12 @@ let Paris=new Shop("Paris",20,38,2.3);
 let Lima=new Shop("Lima",2,16,4.6);
 
 
+
+
+
+
+
 Table.textContent='';
-
-
 //header row
 function header()
 { 
@@ -89,8 +92,7 @@ function header()
 }
 header();
 
-
-
+//
 Shop.prototype.render=function()
 {
   
@@ -116,13 +118,10 @@ Shop.prototype.render=function()
     thElement.textContent=this.total;
       
       
-       
-
-
-   
-    
-
 }
+
+
+
 function Footer()
 {
    
@@ -143,12 +142,8 @@ function Footer()
       total2+=locationArray[j].avgChookies[i]; 
      
        tdElement.textContent=total2;       
-    
+     
     }
-
-   
-    
-
     
 }
 
@@ -156,13 +151,14 @@ let totalOftotal=0;
 for(let j=0;j<locationArray.length;j++)
 { 
   totalOftotal+=locationArray[j].total;
-   
+ // console.log(locationArray[j]); 
 }
 
 var tdElement=document.createElement('td');
 trElement.appendChild(tdElement);
 tdElement.textContent=totalOftotal;  
 console.log("Total of Total",totalOftotal);
+
 
 
     
@@ -178,7 +174,7 @@ for(let i=0;i<locationArray.length;i++)
    locationArray[i].randomCustomershour();
    locationArray[i].avgchookiesperhour();
    locationArray[i].render();
-
+  
 }
 
 Footer();
@@ -212,4 +208,4 @@ function Addform(event)
    addnewshop.avgchookiesperhour();
    addnewshop.render();
    Footer();
-}
+
