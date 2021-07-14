@@ -62,7 +62,6 @@ let Lima=new Shop("Lima",2,16,4.6);
 
 Table.textContent='';
 
-
 //header row
 function header()
 { 
@@ -115,11 +114,7 @@ Shop.prototype.render=function()
     trElement.appendChild(thElement);
     thElement.textContent=this.total;
       
-      
-       
-
-
-   
+    
     
 
 }
@@ -145,10 +140,6 @@ function Footer()
        tdElement.textContent=total2;       
     
     }
-
-   
-    
-
     
 }
 
@@ -167,10 +158,6 @@ console.log("Total of Total",totalOftotal);
 
     
 } 
-  
- 
-
-
 
 
 for(let i=0;i<locationArray.length;i++)
