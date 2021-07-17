@@ -60,8 +60,9 @@ let Lima = new Shop("Lima", 2, 16, 4.6);
 
 
 
+Table.textContent='';
 
-Table.textContent = '';
+
 //header row
 function header() {
 
@@ -185,14 +186,18 @@ function Addform(event) {
    let maxCustomer = parseInt(event.target.max.value);
 
    let Avgforchookies = parseFloat(event.target.avg.value);
-
+  
 
    let addnewshop = new Shop(name, minCustomer, maxCustomer, Avgforchookies);
+  
    //delete the last element
    Table.deleteRow(-1);
+   
    console.log("After", locationArray.length);
    addnewshop.randomCustomershour();
    addnewshop.avgchookiesperhour();
    addnewshop.render();
+
+  
    Footer();
 }
